@@ -1,36 +1,56 @@
-import React from "react";
-import { LabelsProps ,UserProps } from "../data/interfaces";
-import { MyUsers } from "../data/users";
-import UserFullDatas from "../helper/users-comp";
+import { useState } from "react";
 
-const mapDatas = MyUsers.map((data: UserProps, index) =>
-    <p key={`el-${index}`}>{data.name}</p>
-);
-
-
-const Homepage = ({overallMessage} : LabelsProps) => {
-    return(
-        <>
-            <h1>{overallMessage}</h1>
-            
-            <ul className="userList">
-                {MyUsers.map((data: UserProps, index) =>
-                    <li key={`el-${index}`}>
-                        <UserFullDatas
-                        name = {data.name} 
-                        last_name = {data.last_name}
-                        city = {data.city}
-                        country = {data.country}
-                        books = {data.books}
-                        />  
-                    </li>
-                )}
-            </ul>
-
-            {mapDatas}
-
-        </>
-    )
+const Homepage = () => {
+  interface checkboxProps {
+    target?:any,
+    id?:string,
+  }
+  const [isSheetsChecked, setIsSheetsChecked] = useState<boolean>(false);
+  const [isBeamsChecked, setIsBeamsChecked] = useState<boolean>(false);
+  const [isFrameChecked, setIsFrameChecked] = useState<boolean>(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+  
+  console.log("sheets",isSheetsChecked,"beams", isBeamsChecked,"frame",isFrameChecked,"ischecked",isChecked);
+  
+  const isOutofOrder = (event: checkboxProps) =>{
+    let elId = event.target.id;
+    setIsChecked(!isChecked);
+    
+    if(elId == "sheets-status" || elId == "bolts-status" && isSheetsChecked || elId == "beams-status" && isSheetsChecked){
+      setIsSheetsChecked(!isSheetsChecked);
+      setIsBeamsChecked(!isBeamsChecked);
+    }
+    else if(elId == "beams-status" || elId == "bolts-status" && isBeamsChecked){
+      setIsBeamsChecked(!isBeamsChecked);
+    }
+    else if(elId == "frames-status" || elId == "bolts-status" && isFrameChecked ){
+      setIsFrameChecked(!isFrameChecked);
+    }
+  }
+  
+  return(
+    <>
+      <h3>Control Panel</h3>
+      <div className="controlPnl">
+        <div>
+          <input onChange={isOutofOrder} checked={isSheetsChecked} type="checkbox" id="sheets-status" />
+          <span id="sheets-station" style={{ backgroundColor: isSheetsChecked ? "red" : "green"}} >SHEETS</span>
+        </div>
+        <div> 
+          <input onChange={isOutofOrder} type="checkbox" checked={isBeamsChecked} id="beams-status" /> 
+          <span id="beams-station" style={{ backgroundColor: isBeamsChecked ? "red" : "green"}} >BEAMS</span>
+        </div>
+        <div> 
+          <input onChange={isOutofOrder} type="checkbox" checked={isFrameChecked} id="frames-status" />
+          <span id="frames-station" style={{ backgroundColor: isFrameChecked ? "red" : "green"}} >FRAMES</span>
+        </div>
+        <div> 
+          <input onChange={isOutofOrder} type="checkbox" checked={isChecked} id="bolts-status" />
+          <span id="bolts-station" style={{ backgroundColor: isChecked ? "red" : "green"}}>BOLTS</span>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Homepage;

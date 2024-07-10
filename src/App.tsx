@@ -18,9 +18,9 @@ const App = () => {
       
       <Wrapper className="innerWrp">
         <Routes>
-          <Route index element={<Homepage overallMessage={MyLabels.overallMessage} />} />
+          <Route index element={<Homepage />} />
           <Route path='/content-page' element={<ContentPage subTitle={MyLabels.subTitle} errorMessage={MyLabels.errorMessage} loadingMessage={MyLabels.loadingMessage}/>} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path='/contact' element={<Contact overallMessage={MyLabels.overallMessage}/>} />
         </Routes>
       </Wrapper>
 
