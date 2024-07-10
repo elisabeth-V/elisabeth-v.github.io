@@ -1,36 +1,100 @@
-/*reset*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
-body{
-  font-size: 14px;
-  background-color: #f8f8f8;
+//reset css
+ul{
+  list-style-type: none;
+  margin:0;
+  padding:0;
 }
-.App {
-  text-align: center;
-}
-a,p,h1,h2,h3,button{
-  font-family: 'Roboto', sans-serif;
-}
-a:link, a:visited {
+a{
   text-decoration: none;
 }
 a:visited {
   color:#000;
 }
-ul{
-  list-style-type: none;margin:0;padding:0
-}
-h1{
-  margin:0;
-  padding:0;
-}
 
-@media only screen and (min-width: 811px){
-  .App{
-    padding: calc(65px + 2.5vw) 5vw 5vw;
+.header{
+  border-bottom:1px solid #212121;
+  padding: 2vw 0;
+  nav{
+    display:flex;
+    justify-content: center;
   }
 }
-@media only screen and (max-width: 810px){
-  .App{
-    padding: calc(65px + 1vw) 5vw 5vw;
+
+h1 {
+  text-align: center;
+}
+
+//listing image
+.list{
+  display: grid;
+  grid-template-rows: 1fr;
+  margin: 0px 0px 10vw;
+  padding: 0px;
+  column-gap: 2.5vw;
+  img{
+    width:100%
+  }
+}
+
+//buttonsBlock
+.buttonsBlock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//listing users
+.userList{
+  column-gap: 2.5vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+//Destkop only
+@media only screen and (min-width: 811px) {
+  .list{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+}
+//mobile only
+@media only screen and (max-width: 810px) {
+  .list{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.controlPnl{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4vw;
+  row-gap: 4vw;
+  div{
+    border:1px solid #212121;
+    position: relative;
+    span{
+      padding: 2vw;
+      display: inline-block;
+      width: calc(100% - 20px);
+      box-sizing: border-box;
+    }
+  }
+  div:after{
+    content:'';
+    position:absolute;
+  }
+  div:nth-child(1):after,div:nth-child(3):after{
+    right: -3.5vw;
+    border-top: 1vw solid transparent;
+    border-bottom: 1vw solid transparent;
+    border-left: 3vw solid #212121;
+    top:2vw;
+  }
+  div:nth-child(2):after{
+    right: calc(50% - 1vw);
+    bottom: -3.5vw;
+    border-right: 1vw solid transparent;
+    border-left: 1vw solid transparent;
+    border-top: 3vw solid #212121;
   }
 }
