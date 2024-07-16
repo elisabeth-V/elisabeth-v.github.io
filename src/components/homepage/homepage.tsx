@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Homepage = () => {
+const ControlPanel = () => {
   interface checkboxProps {
     target?:any,
     id?:string,
@@ -102,4 +102,4 @@ const Homepage = () => {
   );
 }
 
-export default Homepage;
+export default ControlPanel;

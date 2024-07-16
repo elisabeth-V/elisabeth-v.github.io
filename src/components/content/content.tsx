@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Image from "./image";
 import { GetPlpProducts } from "../helper/api";
 import { ImagesProps, LabelsProps } from "../data/interfaces";
-import { InternaLink, StyledLink } from "../../app-styled";
+import { InternaLink } from "../../app-styled";
 
 const ContentPage = ({subTitle,loadingMessage, errorMessage} : LabelsProps ) => {
     const {

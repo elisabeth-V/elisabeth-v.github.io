@@ -35,3 +35,9 @@ export interface UserProps{
     city: string,
     books: string,
 }
+
+export interface selectedCountryProps {
+    target?:any,
+    id?:string,
+    currentTarget?:any,
+}

@@ -1,14 +1,13 @@
 import React from "react";
 
 export const Footer = () =>{
-
     return(
-        <p>Top Footer</p>
+        <p className="footer">Spa using: Typescript / styled Components / Sass</p>
     )
 }
 
 export const SubFooter = () => {
     return (
-        <p>Subfooter</p>
+        <p className="footer">© 2023</p>
     )
 }

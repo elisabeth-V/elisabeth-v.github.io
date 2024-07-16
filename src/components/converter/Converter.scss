@@ -1,0 +1,68 @@
+.countryListWrp{
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ column-gap: 2vw;
+    p{
+        text-align: center;
+    }
+}
+.countryList{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #212121;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #212121;
+    text-align: center;
+    max-height: 187px;
+    overflow: scroll;
+    box-shadow: inset 0px -6px 5px -5px #b7b7b7;
+    li{
+        padding:10px;
+        cursor: pointer;
+        flex: 7%;
+        border: 1px solid black;
+        transition: all 0.25s ease-in-out;
+        &:hover{
+            background: #cccccc;
+        }
+    }
+}
+
+.converterWrp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .conversionValues{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #cccccc;
+            margin: 0 10px;
+        }
+    }
+    .conversionRes{
+        width: 100%;
+        margin:10px 0;
+    }
+}
+.buttonConversion{
+    border: 1px solid #212121;
+    display: inline-block;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 17px;
+    transition: all 0.25s ease-in-out;
+    &:hover{
+        background: #212121;
+        color: #fff;
+    }
+}

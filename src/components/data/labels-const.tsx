@@ -1,6 +1,6 @@
 export const MyLabels = {
     subTitle :'SPA using Typescript',
-    overallMessage : 'Welcome to my website',
+    overallMessage : 'This application is used to test feat in Typescript',
     loadingMessage:"Loading !!!",
     errorMessage: "Oops something went wrong !"
 }

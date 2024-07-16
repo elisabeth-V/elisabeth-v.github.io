@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { dataApiProps } from '../data/interfaces';
 
 export const GetPlpProducts = (elPerPagelimit : number) => {
     

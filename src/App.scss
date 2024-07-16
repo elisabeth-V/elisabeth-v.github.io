@@ -23,7 +23,9 @@ a:visited {
 h1 {
   text-align: center;
 }
-
+.bold{
+  font-weight: 600;
+}
 //listing image
 .list{
   display: grid;
@@ -33,6 +35,17 @@ h1 {
   column-gap: 2.5vw;
   img{
     width:100%
+  }
+}
+
+.list-5-col{
+  display: grid;
+  grid-template-rows: 1fr;
+  column-gap: 0.5vw;
+  row-gap: 0.5vw;
+  li{
+    border:1px solid #212121;
+    padding: 1vw;
   }
 }
 
@@ -49,17 +62,24 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
 
 }
-
+//footer
+.footer{
+  font-size: 12px;
+  text-align: center;
+}
 //Destkop only
 @media only screen and (min-width: 811px) {
   .list{
     grid-template-columns: repeat(3, 1fr);
   }
+  .list-5-col{
+    grid-template-columns: repeat(7, 1fr);
+  }
   
 }
 //mobile only
 @media only screen and (max-width: 810px) {
-  .list{
+  .list,.list-5-col{
     grid-template-columns: repeat(2, 1fr);
   }
 }
