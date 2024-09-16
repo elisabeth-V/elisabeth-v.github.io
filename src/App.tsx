@@ -1,15 +1,13 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
+import { Footer, SubFooter } from './components/footer/footer';
 import Contact from './components/contact/contact';
 import ContentPage from './components/content/content';
-import ControlPanel from './components/homepage/homepage';
+import Homepage from './components/homepage/homepage';
 import Converter from './components/converter/converter';
-import { Footer,SubFooter } from './components/footer/footer';
 import { Wrapper }from './app-styled'
 import { MyLabels } from './components/data/labels-const';
 import './App.scss';
-
 
 const App = () => {
 
@@ -19,16 +17,16 @@ const App = () => {
         
         <Wrapper className="innerWrp">
           <Routes>
-            <Route index element={<Converter errorMessage={MyLabels.errorMessage} loadingMessage={MyLabels.loadingMessage}/>} />
-            <Route path='/content-page' element={<ContentPage subTitle={MyLabels.subTitle} errorMessage={MyLabels.errorMessage} loadingMessage={MyLabels.loadingMessage}/>} />
+            <Route index element={<Homepage />} />
+            <Route path='/currency-converter' element={<Converter errorMessage={MyLabels.errorMessage} loadingMessage={MyLabels.loadingMessage} copyApiCurrency={MyLabels.copyApiCurrency}/>} />
+            <Route path='/content-page' element={<ContentPage copyApiImg={MyLabels.copyApiImg} errorMessage={MyLabels.errorMessage} loadingMessage={MyLabels.loadingMessage}/>} />
             <Route path='/contact' element={<Contact overallMessage={MyLabels.overallMessage}/>} />
-            <Route path='/control-panel' element={<ControlPanel />} />
           </Routes>
         </Wrapper>
 
         <div className="footerSection">
-          <Footer/>
-          <SubFooter/>
+          <Footer overallMessage={MyLabels.overallMessage}/>
+          <SubFooter copyrightMessage={MyLabels.copyrightMessage}/>
         </div>
       </>
   );

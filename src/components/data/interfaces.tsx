@@ -1,8 +1,10 @@
 export interface LabelsProps {
-    subTitle?:string,
+    copyApiImg?:string,
     loadingMessage?:string,
     errorMessage?:string,
     overallMessage?:string,
+    copyrightMessage?:string,
+    copyApiCurrency?:string,
 }
 
 export interface ImagesProps {
@@ -23,7 +25,7 @@ export interface dataApiProps {
 }
 
 export interface ApiProps {
-    subTitle?:string,
+    copyApiImg?:string,
     loadingMessage?:string,
     errorMessage?:string
 }

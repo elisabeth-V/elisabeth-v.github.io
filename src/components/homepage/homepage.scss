@@ -1,0 +1,20 @@
+.introduction{
+    .emphasised{
+        font-size: calc(20px + (56 - 20) * ((100vw - 375px) / (1920 - 375)));
+        font-weight:300;
+    }
+    h1{
+        font-size: calc(68px + (172 - 68) * ((100vw - 375px) / (1920 - 375)));
+        font-weight: 900;
+        line-height: 0.8;
+        margin:0.75vw 0 2vw;
+        span{
+            display: block;
+        }
+    }
+    .block-ctas{
+        display: flex;
+        column-gap: 4vw;
+        padding: 1vw 0 0;
+    }
+}

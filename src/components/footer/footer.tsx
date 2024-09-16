@@ -1,13 +1,14 @@
 import React from "react";
+import { LabelsProps } from "../data/interfaces";
 
-export const Footer = () =>{
+export const Footer = ({overallMessage} : LabelsProps) =>{
     return(
-        <p className="footer">Spa using: Typescript / styled Components / Sass</p>
+        <p className="footer">{overallMessage}</p>
     )
 }
 
-export const SubFooter = () => {
+export const SubFooter = ({copyrightMessage} : LabelsProps) => {
     return (
-        <p className="footer">© 2023</p>
+        <p className="footer">{copyrightMessage}</p>
     )
 }

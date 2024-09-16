@@ -1,4 +1,11 @@
 //reset css
+a, h1,h2,h3{
+  margin:0;
+  color:var(--main-font-color);
+}
+h2{
+  margin:2vw 0;
+}
 ul{
   list-style-type: none;
   margin:0;
@@ -8,24 +15,81 @@ a{
   text-decoration: none;
 }
 a:visited {
-  color:#000;
-}
-
-.header{
-  border-bottom:1px solid #212121;
-  padding: 2vw 0;
-  nav{
-    display:flex;
-    justify-content: center;
-  }
-}
-
-h1 {
-  text-align: center;
+  color:var(--main-font-color);
 }
 .bold{
   font-weight: 600;
 }
+/*global*/
+.centreWrp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (min-width: 811px) {
+    height: calc(100vh - (64px + 5vw + 35px));
+  }
+  @media only screen and (max-width: 810px) {
+    height: calc(100vh - (102px + 5vw + 35px));
+  }
+}
+
+/**header styling**/
+.header{
+  border-bottom: 1px solid var(--border-grey);
+  padding: 12px 2vw ;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  h1{
+    font-weight: 900;
+    font-size: 18px;
+    margin: 0;
+    flex:1 1 0px;
+    span{
+      display: block;
+      color: var(--primary-color);
+      font-size: 15px;
+    }
+  }
+  nav{
+    display:flex;
+    justify-content: center;
+  }
+  .linkedin{
+    flex:1 1 0px;
+    text-align: right;
+    img{
+      width: 25px;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .header{
+    flex-wrap: wrap ;
+    nav{
+      padding-top:5vw;
+      order:3;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+
+.footerSection{
+  background-color: var(--main-font-color);
+  display: flex;
+  justify-content: space-between;
+  padding:10px 2vw;
+  p{
+    color: #fff;
+    margin:0;
+  }
+
+}
+
 //listing image
 .list{
   display: grid;

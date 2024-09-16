@@ -5,7 +5,7 @@ import { GetPlpProducts } from "../helper/api";
 import { ImagesProps, LabelsProps } from "../data/interfaces";
 import { InternaLink } from "../../app-styled";
 
-const ContentPage = ({subTitle,loadingMessage, errorMessage} : LabelsProps ) => {
+const ContentPage = ({copyApiImg,loadingMessage, errorMessage} : LabelsProps ) => {
     const {
         isLoading,
         isError,
@@ -16,8 +16,19 @@ const ContentPage = ({subTitle,loadingMessage, errorMessage} : LabelsProps ) => 
     
     return(
         <>
-            <h1>My images</h1>
-            <p>{subTitle}</p>
+            <h2>My images</h2>
+            <p>{copyApiImg}</p>
+            
+            <div className="buttonsBlock">
+                <Link onClick={() => fetchPlpProducts(true, false)} to={`/content-page?page=${counterRef.current - 1}`}>
+                    <InternaLink firstpage={counterRef.current - 1} $isPrimary>Previous</InternaLink>
+                </Link>
+                <p>Page {counterRef.current}</p>
+                <Link onClick={() => fetchPlpProducts(false,false)} to={`/content-page?page=${counterRef.current + 1}`}>
+                    <InternaLink firstpage={counterRef.current + 1} $isPrimary={false}>Next</InternaLink>
+                </Link>
+            </div>
+
             <div className="mylisting"> 
                 {isLoading && 
                     <p className="loadingMessage">{loadingMessage}</p>
@@ -46,8 +57,6 @@ const ContentPage = ({subTitle,loadingMessage, errorMessage} : LabelsProps ) => 
                 <Link onClick={() => fetchPlpProducts(false,false)} to={`/content-page?page=${counterRef.current + 1}`}>
                     <InternaLink firstpage={counterRef.current + 1} $isPrimary={false}>Next</InternaLink>
                 </Link>
-                
-                {/* <StyledLink currentPage={counterRef.current + 1} >Another type of next</StyledLink> */}
             </div>
         </>
     );

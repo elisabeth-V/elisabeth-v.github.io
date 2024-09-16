@@ -1,6 +1,9 @@
+//for styled compenent and variables accross the app
 import styled from 'styled-components'
 
 interface linkProps {
+  $isPrimaryColor?: boolean;
+  $isSecondaryColor?: boolean;
   $isPrimary?: boolean;
   className?: string | undefined | any, 
   children?: string | number | boolean | undefined, 
@@ -13,21 +16,46 @@ export const Wrapper = styled.div`
   padding: 0 5vw 5vw;
 `;
 
-const HoverPrimaryNav  = `
-  border:1px solid #212121;
+export const StyledBlockCta = styled.span<linkProps>`
+  background-color: ${props => props.$isSecondaryColor ? "var(--secondary-color)" : "var(--main-font-color)"};
+  color: ${props => props.$isSecondaryColor ? "var(--main-font-color)" : "#fff"};
+  padding:14px 20px;
   display:block;
-  cursor:pointer;
+  font-weight:600;
+  border-radius:3px;
 `;
 
 export const StyledNavLink =  styled.span<linkProps>`
-  background: ${props => props.$isPrimary ? "#ceedff" : "#f5f5f5"};
-  margin:0 5px;
-  padding:5px;
+  color: ${props => props.$isPrimary ? "var(--secondary-color)" : "var(--main-font-color)"};
+  font-weight:300;
+  padding:0.4vw;
+  margin:0 1vw;
   transition:all 0.25s ease-in-out;
-  ${HoverPrimaryNav};
+  font-size: 14px;
+  position:relative;
+  &:after{
+    content:".";
+  }
+  &:before{
+    content:"";
+    background:var(--main-font-color);
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index:-1;
+    width:100%;
+    height:100%;
+    transition: transform 0.5s ease 0s, transform-origin 0s ease 0s;
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
   &:hover{
-      background-color:#92ccee;
+    color:#fff;
+    &:before{
+      transform: scaleX(1);
+      transform-origin: left center;
     }
+  }
 `;
 
 export const InternaLink = styled.span<linkProps>`

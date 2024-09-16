@@ -1,8 +1,8 @@
 import React, { useEffect,useState } from "react";
-import './Converter.scss';
+import './converter.scss';
 import { LabelsProps , selectedCountryProps } from "../data/interfaces";
 
-const Converter = ({loadingMessage, errorMessage} : LabelsProps) => {
+const Converter = ({loadingMessage, errorMessage, copyApiCurrency} : LabelsProps) => {
     const [isLoading, setIsLoading] = useState<boolean>();
     const [isError, setIsError] = useState<boolean>(false);
     const [loadOverall, setOverall] = useState<any>([]);
@@ -102,7 +102,9 @@ const Converter = ({loadingMessage, errorMessage} : LabelsProps) => {
                 <p className="errorMessage">{errorMessage}</p>
             }
             <div>   
-                <h1>Currency Converter</h1>
+                <h2>Currency Converter</h2>
+                <p>{copyApiCurrency}</p>
+
                 <div className="converterWrp">
                     <p className="conversionValues">
                         FROM: <span className='bold'>{convertFromCurrency} </span>

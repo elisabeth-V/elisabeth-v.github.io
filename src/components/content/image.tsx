@@ -1,6 +1,4 @@
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 import { ImageProps } from "../data/interfaces";
-
 
 export default function Image(props: ImageProps) {
     return (

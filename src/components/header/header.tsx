@@ -3,13 +3,17 @@ import { StyledNavLink } from '../../app-styled';
 
 const Header = () => {
   return(
-    <header className="header"> 
+    <header className="header">
+      <h1>ElisabethVicente<span>Front End Developer.</span></h1>
       <nav>
-        <Link className='nav-link' to="/"><StyledNavLink $isPrimary >Homepage</StyledNavLink></Link>
-        <Link className="nav-link" to="/content-page"><StyledNavLink $isPrimary={false}>Images Api</StyledNavLink></Link>
-        <Link className="nav-link" to="/contact"><StyledNavLink $isPrimary={false}>Json List</StyledNavLink></Link>
-        <Link className="nav-link" to="/control-panel"><StyledNavLink $isPrimary={false}>Control Panel</StyledNavLink></Link>
+        <Link to="/"><StyledNavLink $isPrimary>Home</StyledNavLink></Link>
+        <Link to="/currency-converter"><StyledNavLink $isPrimary={false}>Currency Converter</StyledNavLink></Link>
+        <Link to="/content-page"><StyledNavLink $isPrimary={false}>Images Api</StyledNavLink></Link>
+        <Link to="/contact"><StyledNavLink $isPrimary={false}>Contact</StyledNavLink></Link>
       </nav>
+      <a className="linkedin" href="https://www.linkedin.com/in/elisabeth-vicente-frontend-dev/" target='_blank'>
+        <img src='/linkedin-icon.svg' alt='join me on linkedin' />
+      </a>
     </header>
   );
 }
