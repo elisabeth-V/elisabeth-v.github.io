@@ -2,6 +2,8 @@
  display: grid;
  grid-template-columns: 1fr 1fr;
  column-gap: 2vw;
+ padding-bottom: 5vw;
+ border-bottom: 1px solid var(--border-grey);
     p{
         text-align: center;
     }
@@ -9,19 +11,16 @@
 .countryList{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #212121;
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid #212121;
     text-align: center;
     max-height: 187px;
     overflow: scroll;
+    border: 1px solid var(--border-grey);
     box-shadow: inset 0px -6px 5px -5px #b7b7b7;
     li{
         padding:10px;
         cursor: pointer;
         flex: 7%;
-        border: 1px solid black;
+        border: 1px solid var(--border-grey);
         transition: all 0.25s ease-in-out;
         &:hover{
             background: #cccccc;
@@ -34,16 +33,20 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    column-gap: 1.5vw;
     text-align: center;
+    border: 1px solid var(--border-grey);
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 6px var(--border-grey);
     .conversionValues{
         display: flex;
         justify-content: center;
         align-items: center;
         span{
             display: inline-block;
-            width: 60px;
-            height: 30px;
-            line-height: 30px;
+            width: 120px;
+            height: 48px;
+            line-height: 48px;
             background-color: #cccccc;
             margin: 0 10px;
         }
@@ -53,16 +56,21 @@
         margin:10px 0;
     }
 }
-.buttonConversion{
-    border: 1px solid #212121;
-    display: inline-block;
-    padding: 12px;
-    border-radius: 4px;
-    font-weight: 800;
-    font-size: 17px;
-    transition: all 0.25s ease-in-out;
-    &:hover{
-        background: #212121;
-        color: #fff;
+
+@media only screen and (max-width: 810px){
+    .converterWrp{
+        .conversionValues{
+            flex-wrap: wrap;
+            width: 100%;
+            span{
+                margin: 0 5vw 5vw;
+                width: 100%;
+            }
+        } 
+        .conversionBtn{
+            margin: 0 5vw 5vw;
+            width: 100%;
+        }
     }
+
 }

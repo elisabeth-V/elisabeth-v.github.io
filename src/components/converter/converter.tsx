@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from "react";
 import './converter.scss';
 import { LabelsProps , selectedCountryProps } from "../data/interfaces";
+import { StyledBlockCta } from "../../app-styled";
 
 const Converter = ({loadingMessage, errorMessage, copyApiCurrency} : LabelsProps) => {
     const [isLoading, setIsLoading] = useState<boolean>();
@@ -111,7 +112,7 @@ const Converter = ({loadingMessage, errorMessage, copyApiCurrency} : LabelsProps
                         TO: <span className='bold'>{convertToCurrency}</span> 
                     </p>
                     
-                    <div className="buttonConversion" onClick={conversionCalc} >CONVERT</div>
+                    <div className="conversionBtn" onClick={conversionCalc} ><StyledBlockCta $isSecondaryColor={false}>CONVERT</StyledBlockCta></div>
                     
                     {convertToCurrency && convertFromCurrency && convertedValue &&
                         <>
@@ -136,7 +137,7 @@ const Converter = ({loadingMessage, errorMessage, copyApiCurrency} : LabelsProps
                     </div>
                 </div>
             </div>
-            <h2>Rating List</h2>
+            <h2>Currency Rates List</h2>
             <div>{renderCurrencyCompleteList()}</div>
         </>
     )

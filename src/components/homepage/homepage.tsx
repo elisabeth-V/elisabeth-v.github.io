@@ -14,7 +14,8 @@ const Homepage = () => {
 
         
         <div className="block-ctas">
-          <Link to="/contact"><StyledBlockCta  $isSecondaryColor={false}>Contact Me</StyledBlockCta></Link>
+        <a href="mailto:vicente.elisabeth@gmail.com"><StyledBlockCta $isSecondaryColor={false}>Contact Me</StyledBlockCta></a>
+          {/* <Link to="/contact"><StyledBlockCta $isSecondaryColor={false}>Contact Me</StyledBlockCta></Link> */}
           <a href='/vicente_elisabeth-cv-2024.pdf' target="_blank"><StyledBlockCta $isSecondaryColor>Download resume</StyledBlockCta></a>
         </div>
       </section>

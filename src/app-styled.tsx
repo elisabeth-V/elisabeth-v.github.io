@@ -17,12 +17,18 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledBlockCta = styled.span<linkProps>`
-  background-color: ${props => props.$isSecondaryColor ? "var(--secondary-color)" : "var(--main-font-color)"};
+  cursor:pointer;  
+background-color: ${props => props.$isSecondaryColor ? "var(--secondary-color)" : "var(--main-font-color)"};
   color: ${props => props.$isSecondaryColor ? "var(--main-font-color)" : "#fff"};
   padding:14px 20px;
   display:block;
   font-weight:600;
   border-radius:3px;
+  transition:all 0.15s ease-in-out;
+  &:hover{
+    background-color: ${props => props.$isSecondaryColor ? "var(--main-font-color)" : "var(--secondary-color)"};
+    color: ${props => props.$isSecondaryColor ? "#fff" :  "var(--main-font-color)"};
+  }
 `;
 
 export const StyledNavLink =  styled.span<linkProps>`
@@ -45,24 +51,37 @@ export const StyledNavLink =  styled.span<linkProps>`
     z-index:-1;
     width:100%;
     height:100%;
-    transition: transform 0.5s ease 0s, transform-origin 0s ease 0s;
-    transform: scaleX(0);
-    transform-origin: right center;
+    transition: transform 0.25s ease 0s, transform-origin 0s ease 0s;
+    transform: scaleY(0);
+    transform-origin: right bottom;
   }
   &:hover{
     color:#fff;
     &:before{
-      transform: scaleX(1);
-      transform-origin: left center;
+      transform: scaleY(1);
+      transform-origin: left bottom;
     }
+  }
+  @media only screen and (max-width: 810px) {
+    font-size:18px;
   }
 `;
 
 export const InternaLink = styled.span<linkProps>`
   padding:5px;
-  color:#212121;
-  background: ${props => props.$isPrimary ? "#727272" : "#c8c8c8"};
+  border-width:1px;
+  border-style:solid;
+  border-color: ${props => props.$isPrimary ? "var(--border-grey)" : "var(--secondary-color)"};
   display: ${props => props.firstpage === 0 ? "none" : ""};
+  align-items: center;
+  &:before{
+    margin-right:8px;
+    content: ${props => props.$isPrimary ? "'‹ '" : "''"};
+  }
+  &:after{
+   margin-left:8px;
+    content: ${props => props.$isPrimary ? "''" : "' ›'"};
+  }
 `;
 
 const Link = (props : linkProps) => (

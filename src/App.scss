@@ -26,17 +26,17 @@ a:visited {
   justify-content: center;
   align-items: center;
   @media only screen and (min-width: 811px) {
-    height: calc(100vh - (64px + 5vw + 35px));
+    height: calc(100vh - (55px + 5vw + 35px));
   }
   @media only screen and (max-width: 810px) {
-    height: calc(100vh - (102px + 5vw + 35px));
+    height: calc(100vh - (96px + 5vw + 35px));
   }
 }
 
 /**header styling**/
 .header{
-  border-bottom: 1px solid var(--border-grey);
-  padding: 12px 2vw ;
+  border-bottom: 1px solid var(--main-font-color);
+  padding: 10px 2vw 5px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -77,26 +77,18 @@ a:visited {
   }
 }
 
-
-.footerSection{
-  background-color: var(--main-font-color);
-  display: flex;
-  justify-content: space-between;
-  padding:10px 2vw;
-  p{
-    color: #fff;
-    margin:0;
-  }
-
-}
-
 //listing image
 .list{
   display: grid;
   grid-template-rows: 1fr;
-  margin: 0px 0px 10vw;
+  column-gap: 2vw;
+  row-gap:2vw;
+  margin: 0px 0px 5vw;
   padding: 0px;
-  column-gap: 2.5vw;
+  li{
+    border: 1px solid var(--border-grey);
+    padding: 10px;  
+  }
   img{
     width:100%
   }
@@ -116,9 +108,19 @@ a:visited {
 //buttonsBlock
 .buttonsBlock{
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
+  font-size: 12px;
+  column-gap: 0.5vw;
 }
+
+@media only screen and (max-width: 810px) {
+  .buttonsBlock{
+    font-size:14px;
+    column-gap: 2vw;
+  }
+}
+
 //listing users
 .userList{
   column-gap: 2.5vw;
@@ -126,11 +128,7 @@ a:visited {
   grid-template-columns: repeat(2, 1fr);
 
 }
-//footer
-.footer{
-  font-size: 12px;
-  text-align: center;
-}
+
 //Destkop only
 @media only screen and (min-width: 811px) {
   .list{
@@ -148,37 +146,19 @@ a:visited {
   }
 }
 
-.controlPnl{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 4vw;
-  row-gap: 4vw;
-  div{
-    border:1px solid #212121;
-    position: relative;
-    span{
-      padding: 2vw;
-      display: inline-block;
-      width: calc(100% - 20px);
-      box-sizing: border-box;
-    }
-  }
-  div:after{
-    content:'';
-    position:absolute;
-  }
-  div:nth-child(1):after,div:nth-child(3):after{
-    right: -3.5vw;
-    border-top: 1vw solid transparent;
-    border-bottom: 1vw solid transparent;
-    border-left: 3vw solid #212121;
-    top:2vw;
-  }
-  div:nth-child(2):after{
-    right: calc(50% - 1vw);
-    bottom: -3.5vw;
-    border-right: 1vw solid transparent;
-    border-left: 1vw solid transparent;
-    border-top: 3vw solid #212121;
+//footer
+.footer{
+  font-size: 12px;
+  text-align: center;
+}
+
+.footerSection{
+  background-color: var(--main-font-color);
+  display: flex;
+  justify-content: space-between;
+  padding:10px 2vw;
+  p{
+    color: #fff;
+    margin:0;
   }
 }
