@@ -10,6 +10,9 @@
         margin:0.75vw 0 2vw;
         span{
             display: block;
+            &:first-child{
+                color: var(--primary-color);
+            }
         }
     }
     .block-ctas{
